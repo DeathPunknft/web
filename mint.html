@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <link href="assets/images/icon.ico" rel="shortcut icon">
+  <title>web3</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!--
+
+TemplateMo 570 Chain App Dev
+
+https://templatemo.com/tm-570-chain-app-dev
+
+-->
+
+  <!-- Additional CSS Files 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->
+  <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
+  <link rel="stylesheet" href="assets/css/animated.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <script src="assets/jQuery/jquery.min.js"></script>
+  <script src="assets/web3/web3.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+</head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <img src="assets/images/logo.png" alt="Chain App Dev">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#top" class="active"></a></li>
+              <li class="scroll-to-section"><a href="#Roadmap"></a></li>
+              <li class="scroll-to-section"><a href="#about"></a></li>
+              <li class="scroll-to-section"><a href="#mint"></a></li>
+              <li class="scroll-to-section"><a href="#newsletter"></a></li>
+              <li>
+                <div class="gradient-button"><a id="connect-wallet" href="#">Connect Wallet</a></div>
+              </li>
+              <li> <a href="https://twitter.com/Polygonweb3Name" target="_blank"><img src="assets/images/twitter.png"
+                width="36px" height="36px"></a>
+              <li>
+              <li> <a href="https://opensea.io/collection/web3nameservice" target="_blank"><img src="assets/images/opensea.png"
+                width="36px" height="36px"></a>
+              <li>
+              
+              
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+
+
+  <div id="modal" class="popupContainer" style="display:none;">
+    <div class="popupHeader">
+      <span class="header_title">Login</span>
+      <span class="modal_close"><i class="fa fa-times"></i></span>
+    </div>
+
+  </div>
+
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <form class="row g-3">
+                      <div class="col-auto">
+                        <label for="staticEmail2" class="visually-hidden">Email</label>
+                        <input type="text" readonly class="form-control-plaintext" id="staticEmail2">
+                      </div>
+                      <div class="col-auto">
+                        <label for="inputPassword2" class="visually-hidden">Password</label>
+                        <input class="form-control" id="inputPassword2" placeholder=".web3" style="height: 78%;">
+                      </div>
+                      <div class="col-auto">
+                        <button id="availableBtn" class="btn btn-primary mb-3" type="button">available</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="assets/images/slider-dec.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <footer id="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Get updates and annoucements in your inbox</h4>
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-3">
+          <form id="search" action="#" method="GET">
+            <div class="row">
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <input type="address" name="address" class="email" placeholder="Email Address..." autocomplete="on"
+                    required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <button type="submit" class="main-button">Subscribe Now <i class="fa fa-angle-right"></i></button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>.web3</h4>
+            <p>.web3 is your unique domain name<br>
+              that unlocks access to decentralized<br>
+              credit and financial products globally.</p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>let's start</h4>
+            <ul>
+              <li><a href="#top">Home</a></li>
+              <li><a href="#Roadmap">Roadmap</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#mint">Mint</a></li>
+              <li><a href="#Newsletter">Newsletter</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>our supporters and partners</h4>
+            <ul>
+              <li><a href="https://a16zcrypto.com/">A16z</a></li>
+              <li><a href="https://www.linkedin.com/company/goldentree-asset-management/">GoldenTree</a></li>
+              <li><a href="https://www.linkedin.com/company/op-crypto/">Op-crypto</a></li>
+              <li><a href="https://www.linkedin.com/company/gsrventures/">GSRVentures</a></li>
+              <li><a href="https://www.linkedin.com/company/lateralfrontiersvc/">Lateralfrontiers</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>GET MORE</h4>
+            <div class="logo">
+
+            </div>
+            <p>.web3</p>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div clas="container" style="padding: 0px 0px 0px;">
+      <button type="button" class="btn btn-primary popover-show" title="Popover title" data-container="body"
+        data-toggle="popover">
+      </button>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+
+
+  var abi = [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "name": "available",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "secret",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "resolver",
+          "type": "address"
+        }
+      ],
+      "name": "makeCommitment",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "commitment",
+          "type": "bytes32"
+        }
+      ],
+      "name": "commit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "duration",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "secret",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "resolver",
+          "type": "address"
+        }
+      ],
+      "name": "register",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ];
+  var contract = "0x58CC2E0B72073309B0E504ab77CD745137Fb2fd6";
+  var RESOLVER_ADDR = "0x65424274a9325252bf3B1FcC706169610eBD66aC";
+
+  const provider = window.ethereum || window.web3 || (window.bitkeep && window.bitkeep.ethereum);
+
+  var web3 = new Web3(provider);
+
+  var gasMultiple = 1.5;
+  var network = "main"; // network type
+    var net_data_map = {
+      testnet: {
+        chainId: "0x13881",
+        chainName: "Polygon mumbai",
+        nativeCurrency: {
+          name: "Matic",
+          symbol: "Matic",
+          decimals: 18
+        },
+        rpcUrls: ["https://matic-mumbai.chainstacklabs.com"],
+        blockExplorerUrls: ["https://mumbai.polygonscan.com"]
+      },
+      main: {
+        chainId: "0x89",
+        chainName: "Polygon Mainnet",
+        nativeCurrency: {
+          name: "Matic",
+          symbol: "Matic",
+          decimals: 18
+        },
+        rpcUrls: ["https://polygon-rpc.com"],
+        blockExplorerUrls: ["https://polygonscan.com"]
+      }
+    }
+
+  var isConnect = window.localStorage.getItem("selectedWallet");
+  var walletPlaceholderText = "Connect Wallet";
+  var wallet = new Proxy({ address: walletPlaceholderText }, {
+    set(obj, prop, value) {
+
+      if (prop === "address") {
+        if (value && value != walletPlaceholderText) {
+          $("#connect-wallet").html(`${value.slice(0, 5)}...${value.slice(-5, value.length)}`)
+          // allowance(value)
+        } else {
+          $("#connect-wallet").html(walletPlaceholderText)
+        }
+      }
+      if (prop == "chainId") {
+        if (value !== net_data_map[network].chainId) {
+          if (["0x1", "0x2", "0x3", "0x4", "0x5"].includes(net_data_map[network].chainId)) {
+            // add ethereum chain switch
+            window.ethereum.request({
+              method: "wallet_switchEthereumChain",
+              "params": [
+                {
+                  "chainId": net_data_map[network].chainId,
+                }
+              ]
+            })
+          } else {
+            window.ethereum.request({
+              method: 'wallet_addEthereumChain',
+              params: [net_data_map[network], wallet.address]
+            })
+              .then((result) => { })
+              .catch((error) => { })
+          }
+
+        }
+
+      }
+      obj[prop] = value
+    }
+  });
+
+
+
+  provider.on("accountsChanged", (accounts) => {
+    wallet.address = accounts[0] || walletPlaceholderText;
+  })
+
+  provider.on('disconnect', (error) => {
+    wallet.address = walletPlaceholderText
+  });
+
+  provider.on('chainChanged', (chainId) => {
+    wallet.chainId = chainId;
+    connectWallet(provider)
+  });
+  function connectWallet(provider) {
+    provider.enable().then((accounts) => {
+      wallet.address = accounts[0];
+      wallet.chainId = provider.chainId;
+      window.localStorage.setItem("selectedWallet", "INJECTED")
+    }).catch(error => {
+      console.log(error);
+    });
+  }
+
+  const resgisContract = new web3.eth.Contract(abi, contract)
+
+  async function allowance(address) {
+    wallet.allowance = await resgisContract.methods.allowance(address || wallet.address, contract).call();
+
+    if (wallet.allowance < mintFee) {
+      wallet.approve = false;
+      $("#mint span").html("Approve")
+    } else {
+      wallet.approve = true;
+      $("#mint span").html("Mint")
+    }
+  }
+
+  async function approve() {
+    let gasPrice = await web3.eth.getGasPrice();
+    const data = resgisContract.methods.approve(contract, mintFee).encodeABI();
+    const gas = await web3.eth.estimateGas({
+      from: wallet.address,
+      to: fee_token[network].address,
+      data
+    })
+    try {
+      const result = await resgisContract.methods.approve(contract, mintFee).send({
+        from: wallet.address,
+        to: fee_token[network].address,
+        gasPrice: parseInt(gasPrice * gasMultiple),
+        gas: parseInt(gas * gasMultiple)
+      });
+      wallet.approve = true;
+      Toastify({
+        text: "Approval successful",
+        className: "info",
+      }).showToast();
+      await allowance();
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  var mintBttun = true;
+
+
+  $(function () {
+
+    if (isConnect) {
+      connectWallet(provider);
+    };
+
+    $("#connect-wallet").on("click", () => {
+      connectWallet(provider);
+    });
+
+    if (!mintBttun) return;
+
+    $("#availableBtn").on("click", async () => {
+
+      if (!mintBttun) return;
+
+      mintBttun = false;
+
+      var inputValue = $("#inputPassword2").val();
+
+      const web3 = new Web3('https://matic-mainnet.chainstacklabs.com')
+
+      const ethersProvider = new ethers.providers.Web3Provider(window.ethereum)
+      const ethersRegisterContract = new ethers.Contract(contract, abi, ethersProvider.getSigner());
+      const myContract = new web3.eth.Contract(abi, contract)
+      const isRegister = await myContract.methods.available(inputValue).call();
+      if (isRegister) {
+        $("#availableBtn").text("register");
+        $("#add_span").remove();
+      } else {
+        const add_span = $("#add_span");
+        if (add_span.length <= 0) {
+          $("#availableBtn").text("available");//this domain name has been registered. Please enter it again
+          $("#inputPassword2").parent().append('<span id = "add_span" style="color: red">already registered</span>')
+        }
+      }
+
+      const register = await myContract.methods.available(inputValue).call();
+
+      if (!register) {
+        mintBttun = true;
+        $("#availableBtn").text("available");
+        return;
+      }
+
+      
+
+      $("#availableBtn").text("loading");
+      const buff = randomBytes(32);
+
+      const toHexString = arr => Array.from(arr, i => i.toString(16).padStart(2, "0")).join("");
+
+      const salt = "0x" + toHexString(buff);
+
+      const name = $("#inputPassword2").val();
+
+      if (wallet.address === walletPlaceholderText) {
+        connectWallet(provider)
+        mintBttun = true;
+        return;
+      }
+
+      let registerContract = new web3.eth.Contract(abi, contract);
+
+      try {
+
+
+        const commitment = await ethersRegisterContract.makeCommitment(name, wallet.address, salt, RESOLVER_ADDR);
+        const address1 = wallet.address;
+        const gasPrice1 = await window.web3.eth.getGasPrice()
+
+        await commit(ethersRegisterContract, commitment);
+
+        setTimeout(async () => {
+          
+          await register1(name, wallet.address, salt, ethersRegisterContract);
+
+          $("#availableBtn").text("available");
+          mintBttun = true;
+          $(function () { $('.popover-show').popover('show'); });
+          $(function () {
+            $('.popover-show').on('shown.bs.popover', function () {
+
+              alert("Register successful");
+
+              location.reload();
+            })
+          });
+
+        }, 62000);
+
+      } catch (error) {
+        $("#availableBtn").text("available");
+        mintBttun = true;
+        console.log(error);
+      }
+    })
+
+  })
+
+
+  function randomBytes(n) {
+    for (var bytes = []; n > 0; n--)
+      bytes.push(Math.floor(Math.random() * 32));
+    return bytes;
+  }
+
+
+  async function commit(ethersRegisterContract, commitment) {
+
+    const tx = await ethersRegisterContract.commit(commitment);
+
+    await tx.wait();
+
+  }
+
+
+  async function register1(name, owner, salt, ethersRegisterContract) {
+    const DAYS = 24 * 60 * 60;
+    const duration = 365 * DAYS;
+    const gas = ethersRegisterContract.getGasPrice;
+    
+    const rtx = await ethersRegisterContract.register(name, owner, duration, salt, RESOLVER_ADDR, {
+      gasLimit: 800000,
+      value: ethers.utils.parseEther("10")
+    });
+
+    await rtx.wait();
+    console.log("registered");
+  }
+
+</script>
